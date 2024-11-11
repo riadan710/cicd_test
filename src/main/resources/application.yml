@@ -2,5 +2,5 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/umc7th
-    username: ${DB_USERNAME}  # DB ????
-    password: ${DB_PASSWORD}  # DB ????
+    username: ${DB_USERNAME}  # DB Environment Variable
+    password: ${DB_PASSWORD}  # DB Environment Variable
