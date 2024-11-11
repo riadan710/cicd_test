@@ -17,7 +17,7 @@ import java.util.List;
 public class Mission extends BaseEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Integer reward;
