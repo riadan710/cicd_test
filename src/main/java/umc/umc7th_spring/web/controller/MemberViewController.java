@@ -19,9 +19,11 @@ public class MemberViewController {
     // thymeleaf 사용을 위해 일부가 변경되었습니다.
     // 실제로는 8주차에서 작성한 컨트롤러와 동일하게 작성하시면 됩니다!!
     @PostMapping("/members/signup")
-    public String joinMember(@ModelAttribute("memberJoinDto") MemberRequestDTO.JoinDTO request, // 협업시에는 기존 RequestBody 어노테이션을 붙여주시면 됩니다!
+    public String joinMember(@ModelAttribute("memberJoinDTO") MemberRequestDTO.JoinDTO request, // 협업시에는 기존 RequestBody 어노테이션을 붙여주시면 됩니다!
                              BindingResult bindingResult,
                              Model model) {
+        System.out.println(request.getAddress());
+
         if (bindingResult.hasErrors()) {
             // 뷰에 데이터 바인딩이 실패할 경우 signup 페이지를 유지합니다.
             return "signup";
@@ -44,7 +46,7 @@ public class MemberViewController {
 
     @GetMapping("/signup")
     public String signupPage(Model model) {
-        model.addAttribute("memberJoinDto", new MemberRequestDTO.JoinDTO());
+        model.addAttribute("memberJoinDTO", new MemberRequestDTO.JoinDTO());
         return "signup";
     }
 
